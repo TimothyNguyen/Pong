@@ -44,6 +44,7 @@ public class Board extends JPanel {
 		g.setColor(Color.BLUE);
 		g.fillOval((int) ball.getX(), (int) ball.getY(), (int)ball.getRadius(), (int)ball.getRadius());
 		
+	
 	}
 	
 	public static void main(String[] args) {
