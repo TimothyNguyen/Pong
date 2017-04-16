@@ -1,11 +1,14 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Board extends JPanel {
+public class Board extends JPanel implements KeyListener{
 
+	private static final long serialVersionUID = 1L;
 	private Ball ball;
 	private Paddle lPaddle;
 	private Paddle rPaddle;
@@ -18,7 +21,9 @@ public class Board extends JPanel {
 		boardHeight = 800;
 		ball = new Ball();
 		lPaddle = new Paddle(60);
-		rPaddle = new Paddle(getBoardWidth() - 100);
+		rPaddle = new Paddle(Board.getBoardWidth() - 100);
+		this.addKeyListener(this);
+		this.setFocusable(true);
 		startGame();
 	}
 	
@@ -60,5 +65,34 @@ public class Board extends JPanel {
 		frame.setSize(getBoardWidth(), getBoardHeight());
 		frame.setVisible(true);
 	}
-	
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		if(e.getKeyCode() == KeyEvent.VK_UP){
+			lPaddle.upY();
+		}
+		if(e.getKeyCode() == KeyEvent.VK_DOWN){
+			lPaddle.downY();
+		}
+		if(e.getKeyCode() == KeyEvent.VK_LEFT){
+			rPaddle.upY();
+		}
+		if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+			rPaddle.downY();
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }
