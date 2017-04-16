@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 public class Board extends JPanel {
 
 	private Ball ball;
+	private Paddle lPaddle;
+	private Paddle rPaddle;
 	private static int boardWidth;
 	private static int boardHeight;
 	
@@ -15,6 +17,8 @@ public class Board extends JPanel {
 		boardWidth = 1200;
 		boardHeight = 800;
 		ball = new Ball();
+		lPaddle = new Paddle(60);
+		rPaddle = new Paddle(getBoardWidth() - 100);
 		startGame();
 	}
 	
@@ -44,7 +48,9 @@ public class Board extends JPanel {
 		g.setColor(Color.BLUE);
 		g.fillOval((int) ball.getX(), (int) ball.getY(), (int)ball.getRadius(), (int)ball.getRadius());
 		
-	
+		g.setColor(Color.GREEN);
+		g.fillRect((int)lPaddle.getX(), (int)lPaddle.getY(), (int)lPaddle.getWidth(), (int)lPaddle.getHeight());
+		g.fillRect((int)rPaddle.getX(), (int)rPaddle.getY(), (int)rPaddle.getWidth(), (int)rPaddle.getHeight());
 	}
 	
 	public static void main(String[] args) {
