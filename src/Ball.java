@@ -10,8 +10,8 @@ public class Ball {
 	public Ball() {
 		x = (int)Board.getBoardWidth()/2;
 		y = (int)Board.getBoardHeight()/2; 
-		speedX = 5;
-		speedY = 5;
+		speedX = (Math.random() * 6 + 1);
+		speedY = (Math.random() * 6 + 1);
 		radius = 30;
 		color = Color.BLUE;
 	}
