@@ -10,9 +10,9 @@ public class Ball {
 	public Ball() {
 		x = (int)Board.getBoardWidth()/2;
 		y = (int)Board.getBoardHeight()/2; 
-		speedX = (Math.random() * 6 + 1);
-		speedY = (Math.random() * 6 + 1);
-		radius = 30;
+		speedX = (double)(10 * Math.cos(Math.toRadians(45)) + 5);
+		speedY = (double)(-10 * (double)Math.sin(Math.toRadians(45)) + 5);
+		radius = 40;
 		color = Color.BLUE;
 	}
 	
