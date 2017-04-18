@@ -20,7 +20,7 @@ public class Board extends JPanel implements KeyListener{
 		boardWidth = 1200;
 		boardHeight = 800;
 		ball = new Ball();
-		lPaddle = new Paddle(60);
+		lPaddle = new Paddle(50);
 		rPaddle = new Paddle(Board.getBoardWidth() - 100);
 		this.addKeyListener(this);
 		this.setFocusable(true);
@@ -34,7 +34,7 @@ public class Board extends JPanel implements KeyListener{
 		Thread gameThread = new Thread() {
 			public void run() {
 				while(true) {
-					ball.move();
+					ball.move(lPaddle, rPaddle);
 					repaint();
 					try {
 						Thread.sleep(1000/30);

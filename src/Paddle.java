@@ -8,10 +8,10 @@ public class Paddle {
 	private final int speed = 25;
 
 	public Paddle(int x) {
-		this.x = x;
-		y = Board.getBoardHeight()/2;
 		width = 50;
 		height = 100;
+		this.x = x - width/2;
+		y = Board.getBoardHeight()/2 - height/2;
 	}
 
 	// Mutators and accessors
