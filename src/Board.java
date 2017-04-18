@@ -27,7 +27,7 @@ public class Board extends JPanel implements KeyListener{
 		startGame();
 	}
 	
-	public static int getBoardWidth() 	{ return boardWidth;  }
+	public static int getBoardWidth()  { return boardWidth;  }
 	public static int getBoardHeight() { return boardHeight; }
 	
 	public void startGame() {
